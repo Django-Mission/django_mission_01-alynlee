@@ -35,4 +35,14 @@ def calculator(request):
 
 def lotto(request):
 
-    return render(request, "lotto.html", {"result": random.sample(range(1, 46), 7)})
+    return render(request, "lotto.html")
+
+
+def lotto_result(request):
+
+    result = [random.sample(range(1, 46), 7) for _ in range(3)]
+    game_num = request.GET.get("game_num")
+
+    return render(
+        request, "lotto_result.html", {"result": result, "game_num": game_num}
+    )

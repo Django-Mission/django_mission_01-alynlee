@@ -15,13 +15,10 @@
 
 <body>
     <h1 style="font-size:70px;"> 로또 번호 추출기 </h1>
-    <form action="{% url 'demos:lotto_result' %}">
-        <p style="font-size:20px;"> 로또 번호를 받아보세요! </p>
-        <p style="font-size:20px;"> 몇개의 게임을 뽑으시겠습니까?
-            <input type="text" value=1 name=game_num style="width: 250px;  height: 30px;">
-            <input type="submit" value="로또 번호 추출하기" style="width: 200px; height: 30px; font-size:20px;">
-        </p>
-    </form>
+    <p style="font-size:20px;"> 생성된 로또 번호입니다. </p>
+    <p style="font-size:20px;"> 게임 수 : {{ game_num }} </p>
+    <p style="font-size:20px;"> 로또 번호 : {{ result }} </p>
+    <a href="{% url 'demos:lotto' %}" style="font-size:20px;"> 돌아가기 </a>
 
 </body>
 
