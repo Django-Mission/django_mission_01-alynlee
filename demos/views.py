@@ -39,9 +39,8 @@ def lotto(request):
 
 
 def lotto_result(request):
-
-    result = [random.sample(range(1, 46), 7) for _ in range(3)]
     game_num = request.GET.get("game_num")
+    result = [random.sample(range(1, 46), 7) for _ in range(int(game_num))]
 
     return render(
         request, "lotto_result.html", {"result": result, "game_num": game_num}
